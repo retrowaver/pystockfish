@@ -226,7 +226,7 @@ class Engine(subprocess.Popen):
             if split_text[0] == "info":
                 last_info = Engine._bestmove_get_info(text)
             if split_text[0] == "bestmove":
-                ponder = None if len(split_text[0]) < 3 else split_text[3]
+                ponder = None if 3 not in split_text else split_text[3]
                 return {'move': split_text[1],
                         'ponder': ponder,
                         'info': last_info}
