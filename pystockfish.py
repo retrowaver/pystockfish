@@ -222,7 +222,6 @@ class Engine(subprocess.Popen):
         while True:
             text = self.stdout.readline().strip()
             split_text = text.split(' ')
-            print(text)
             if split_text[0] == "info":
                 last_info = Engine._bestmove_get_info(text)
             if split_text[0] == "bestmove":
